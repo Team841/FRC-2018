@@ -24,7 +24,7 @@ public class C {
 	public static final double sensitivityLow = 0.75;
 	public static final double centervalue = 140;
 	public static final double tolerance = 10;
-	public static final int currentlimit = 60;
+	public static final int currentlimit = 45;
 	public static final int currenttimeout =5000;
 	
 	// AUTONOMOUS CONSTANTS
