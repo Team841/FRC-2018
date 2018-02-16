@@ -44,6 +44,7 @@ public class Drive extends Command {
     @Override
     protected void execute() {
     	Robot.driveTrain.Drive(Robot.oi.getDriver());
+    	Robot.driveTrain.updateDriveStation();
     }
 
     // Make this return true when this Command no longer needs to run execute()

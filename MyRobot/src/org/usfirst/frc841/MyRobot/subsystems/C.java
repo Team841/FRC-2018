@@ -24,9 +24,15 @@ public class C {
 	public static final double sensitivityLow = 0.75;
 	public static final double centervalue = 140;
 	public static final double tolerance = 10;
-	public static final int currentlimit = 45;
-	public static final int currenttimeout =5000;
+	public static final int currentlimit = 35;
+	public static final int currentPeak = 0;
+	public static final int currenttimeout =10;
 	
+	// Settings for Quad Encoder
+	public static final int pulsePerRev =20;
+    public static final double wheelDiameter = 6; //in inches  
+    public static double gearRatio = 0.1152;
+    
 	// AUTONOMOUS CONSTANTS
 	public static final double autoDrivingDistance = .5; // In time, is seconds driving from the starting point to one of the nodes of movement in the autonomous mode.
 	public static final double autoTurningDistance = .4; // In time, is seconds to turn until 45 degrees from a 0 turning speed.	
