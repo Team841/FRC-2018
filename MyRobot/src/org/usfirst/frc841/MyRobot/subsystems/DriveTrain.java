@@ -14,6 +14,8 @@ package org.usfirst.frc841.MyRobot.subsystems;
 import org.usfirst.frc841.MyRobot.Robot;
 import org.usfirst.frc841.MyRobot.RobotMap;
 import org.usfirst.frc841.MyRobot.commands.*;
+import org.usfirst.frc841.lib.Logger;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.*;
 import edu.wpi.first.wpilibj.Joystick;
@@ -64,6 +66,7 @@ public class DriveTrain extends Subsystem {
     private boolean isQuickTurn = false;
     private boolean isStraight = false;
     
+    private Logger log;
     
     public DriveTrain(){
     	
@@ -88,6 +91,9 @@ public class DriveTrain extends Subsystem {
 		rightDrive3.enableCurrentLimit(true);
 		
 		this.initEncoder();
+		Logger log = new Logger();
+
+	
 	}
     
     @Override
