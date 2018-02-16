@@ -33,6 +33,17 @@ public class C {
     public static final double wheelDiameter = 6; //in inches  
     public static double gearRatio = 0.1152;
     
+    //AutoMode Constants
+    public double[][] Path1 = new double [][] {
+    	{ 0,0 },
+    	{ 2,3 }
+    };
+    
+    public double TotalTime = 12;
+    public double TimeStep = 0.1;
+    public double robotTrackWidth = 2.167;
+    
+    
 	// AUTONOMOUS CONSTANTS
 	public static final double autoDrivingDistance = .5; // In time, is seconds driving from the starting point to one of the nodes of movement in the autonomous mode.
 	public static final double autoTurningDistance = .4; // In time, is seconds to turn until 45 degrees from a 0 turning speed.	
