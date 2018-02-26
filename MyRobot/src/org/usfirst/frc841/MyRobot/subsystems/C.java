@@ -24,7 +24,7 @@ public class C {
 	public static final double sensitivityLow = 0.75;
 	public static final double centervalue = 140;
 	public static final double tolerance = 10;
-	public static final int currentlimit = 25;
+	public static final int currentlimit = 35;
 	public static final int currentPeak = 0;
 	public static final int currenttimeout =10;
 	
@@ -44,14 +44,6 @@ public class C {
     public double robotTrackWidth = 2.167;
     
     
-    //Claw PID Loop
-    public static final double c_p = 0;
-    public static final double c_i = 0;
-    public static final double c_d = 0;
-    public static final int c_izone = 0;
-    public static final double c_ramprate = 100;
-    
- 
 	// AUTONOMOUS CONSTANTS
 	public static final double autoDrivingDistance = .5; // In time, is seconds driving from the starting point to one of the nodes of movement in the autonomous mode.
 	public static final double autoTurningDistance = .4; // In time, is seconds to turn until 45 degrees from a 0 turning speed.	
