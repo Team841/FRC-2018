@@ -45,20 +45,26 @@ public class C {
     
     
     //Claw PID Loop
-    public static final double c_p = 0;
-    public static final double c_i = 0;
-    public static final double c_d = 0;
-    public static final int c_izone = 0;
-    public static final double c_ramprate = 100;
+    public static final double c_p = 0.00022;
+    public static final double c_i = 0.0000;
+    public static final double c_d = 0.00003;
+    public static final double c_offset = 0;
     
- 
-	// AUTONOMOUS CONSTANTS
-	public static final double autoDrivingDistance = .5; // In time, is seconds driving from the starting point to one of the nodes of movement in the autonomous mode.
-	public static final double autoTurningDistance = .4; // In time, is seconds to turn until 45 degrees from a 0 turning speed.	
-	public static final double autoMotorSpeed = .5;
-	public static final double autoMotorLowSpeed = .3;
-	//public static int nAutonomousMode = 0;
-	
-	
-	
+    
+    //Claw PID Loop
+    public static final double cl_p = 0.00015;
+    public static final double cl_i = 0.0000;
+    public static final double cl_d = 0.00003;
+    
+    public static final double claw_dwn = 2972;
+    public static final double claw_mid = 5500;
+    public static final double claw_up = 6055;
+    
+    public static final int intake_stop = 0;
+    public static final int intake_suck = 1;
+    public static final int intake_spit = 2;
+    
+   
+    
+    
 }
