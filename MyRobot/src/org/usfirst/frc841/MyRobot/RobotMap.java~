@@ -41,6 +41,7 @@ public class RobotMap {
     public static WPI_TalonSRX driveTrainRightDrive1;
     public static WPI_TalonSRX driveTrainRightDrive2;
     public static WPI_TalonSRX driveTrainRightDrive3;
+    public static DigitalInput driveTrainAutoSelector;
     public static WPI_VictorSPX elevatorLift1;
     public static WPI_VictorSPX elevatorLift2;
     public static WPI_TalonSRX clawElbow;
@@ -79,6 +80,9 @@ public class RobotMap {
         
         driveTrainRightDrive3 = new WPI_TalonSRX(3);
         
+        
+        driveTrainAutoSelector = new DigitalInput(6);
+        LiveWindow.addSensor("DriveTrain", "AutoSelector", driveTrainAutoSelector);
         
         elevatorLift1 = new WPI_VictorSPX(0);
         

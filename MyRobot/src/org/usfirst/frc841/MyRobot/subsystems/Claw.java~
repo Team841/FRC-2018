@@ -61,12 +61,16 @@ public class Claw extends Subsystem {
     double x[] = {1,2,3};
     double y[] = {0,0,0};
     private double period = 0.1;
+    private double zero;
     //constructor
     public Claw() {
     ploop = new Claw.CLoop(this, this.x,this.y, (long) Math.abs(this.period*100));
     ploop.SetOutputLimits(-0.5, 0.5);
     ploop.setTunings(C.c_p, C.c_i, C.c_d);
-    ploop.updateSetpoint(3200);
+    this.zero = elbow.getSensorCollection().getPulseWidthPosition();
+    this.zero = 2850- this.zero;
+    
+    //ploop.updateSetpoint(3200);
     }
     @Override
     public void initDefaultCommand() {
@@ -133,7 +137,7 @@ public class Claw extends Subsystem {
    
    
    public double getAngle() {
-	  return (double) (elbow.getSensorCollection().getPulseWidthPosition()-C.c_offset);
+	  return (double) (elbow.getSensorCollection().getPulseWidthPosition()-C.c_offset+this.zero);
    }
    public void setElbowPower(double power) {
 	   elbow.set(-power);

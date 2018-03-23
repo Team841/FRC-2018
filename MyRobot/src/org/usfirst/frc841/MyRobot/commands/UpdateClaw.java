@@ -51,11 +51,18 @@ public class UpdateClaw extends Command {
     			Robot.claw.closeClaw();
     		}
     		if(Robot.claw.lastcubesensor & !Robot.claw.isCubeGot()) {
-    			Robot.claw.stopSuck();
     			Robot.claw.closeClaw();
-    			Robot.claw.ploop.setTunings(C.c_p, C.c_i, C.c_d);
-    			Robot.claw.ploop.updateSetpoint(C.claw_up);//Set claw elbow to retract
-    			Robot.claw.disableGrab();
+    			setTimeout (0.7);
+    			Robot.driveTrain.enablepickup=true;
+       		}
+    		if( Robot.driveTrain.enablepickup && !isTimedOut() ) {
+				
+			
+			Robot.claw.stopSuck();
+			Robot.claw.ploop.setTunings(C.c_p, C.c_i, C.c_d);
+			Robot.claw.ploop.updateSetpoint(C.claw_up);//Set claw elbow to retract
+			Robot.claw.disableGrab();
+			Robot.driveTrain.enablepickup=false;
     		}
     			
     	}

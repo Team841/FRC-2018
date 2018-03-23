@@ -74,7 +74,7 @@ public class OI {
         
         putIntakeInPostion = new JoystickButton(coPilot, 2);
         putIntakeInPostion.whenPressed(new PutClawInPixelIntakePosition());
-        downClaw = new JoystickButton(coPilot, 3);
+        downClaw = new JoystickButton(coPilot, 1);
         downClaw.whenPressed(new BringClawDown());
         spitOut = new JoystickButton(coPilot, 10);
         spitOut.whileHeld(new SetIntakes(2));
@@ -83,7 +83,7 @@ public class OI {
         clawClose = new JoystickButton(coPilot, 6);
         clawClose.whenPressed(new CloseClaw());
         score1 = new JoystickButton(coPilot, 3);
-        score1.whenPressed(new ScoreOnSwitch());
+        score1.whileHeld(new ScoreOnSwitch());
         clawMoveOut = new JoystickButton(coPilot, 4);
         clawMoveOut.whenPressed(new MoveClawOut());
         driver = new Joystick(0);
@@ -95,6 +95,8 @@ public class OI {
 
 
         // SmartDashboard Buttons
+        SmartDashboard.putData("AutoSelect", new AutoSelect());
+        SmartDashboard.putData("AutoSwitchScore", new AutoSwitchScore());
         SmartDashboard.putData("PutClawInPixelIntakePosition", new PutClawInPixelIntakePosition());
         SmartDashboard.putData("OpenClaw", new OpenClaw());
         SmartDashboard.putData("CloseClaw", new CloseClaw());
