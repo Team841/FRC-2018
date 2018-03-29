@@ -428,7 +428,10 @@ public static double limit(double v, double limit) {
     SmartDashboard.putNumber("LSpeed", this.getLeftSpeed());
     SmartDashboard.putNumber("RSpeed", this.getRightSpeed());
     SmartDashboard.putNumber("Accumulator", quickStopAccumulator);
-//    SmartDashboard.putNumber("RPower",this.rightPwm); Sam dreams of this information
+    int test;
+    test = this.getClosestSwitch();
+    SmartDashboard.putNumber("switch", test);
+   // SmartDashboard.putNumber("RPower",this.rightPwm); Sam dreams of this information
     
     //SmartDashboard.putString("DB/String 1","Rdist: " + Math.floor(this.getRightEncoderDistance() *100)/100.0);
     //SmartDashboard.putString("DB/String 2","Lpower: " + Robot.driveTrain.getCount());
@@ -438,12 +441,21 @@ public static double limit(double v, double limit) {
     public boolean autoSelect() {
     	return autoSelector.get();
     }
-    public char getClosestSwitch() {
+    public int getClosestSwitch() {
     	String data;
-    data=DriverStation.getInstance().getGameSpecificMessage();
+    data = DriverStation.getInstance().getGameSpecificMessage();
     
-    	return 0;
+    if(data.charAt(0)=='L') {
+    	return 1;
     }
-    
+    if(data.charAt(0)=='R') {
+    	return 2;
+    }
+    else {
+    	return 0;
+
+    }
+  
+    }
 }
 
