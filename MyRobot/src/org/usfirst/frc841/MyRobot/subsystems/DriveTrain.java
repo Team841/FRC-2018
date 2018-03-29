@@ -429,8 +429,8 @@ public static double limit(double v, double limit) {
     SmartDashboard.putNumber("RSpeed", this.getRightSpeed());
     SmartDashboard.putNumber("Accumulator", quickStopAccumulator);
     int test;
-    test = this.getClosestSwitch();
-    SmartDashboard.putNumber("switch", test);
+  //  test = this.getClosestSwitch();
+   // SmartDashboard.putNumber("switch", test);
    // SmartDashboard.putNumber("RPower",this.rightPwm); Sam dreams of this information
     
     //SmartDashboard.putString("DB/String 1","Rdist: " + Math.floor(this.getRightEncoderDistance() *100)/100.0);
@@ -441,9 +441,9 @@ public static double limit(double v, double limit) {
     public boolean autoSelect() {
     	return autoSelector.get();
     }
-    public int getClosestSwitch() {
+    /*public int getClosestSwitch() {
     	String data;
-    data = DriverStation.getInstance().getGameSpecificMessage();
+       data = DriverStation.getInstance().getGameSpecificMessage();
     
     if(data.charAt(0)=='L') {
     	return 1;
@@ -456,6 +456,6 @@ public static double limit(double v, double limit) {
 
     }
   
-    }
+    }*/
 }
 
