@@ -95,6 +95,7 @@ public class OI {
 
 
         // SmartDashboard Buttons
+        SmartDashboard.putData("EncoderTurn,Left", new EncoderTurn(2,0.1,true));
         SmartDashboard.putData("TurnToDistance", new TurnToDistance());
         SmartDashboard.putData("AutoSelect", new AutoSelect());
         SmartDashboard.putData("AutoSwitchScore", new AutoSwitchScore());

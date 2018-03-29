@@ -44,12 +44,16 @@ public class SetIntakes extends Command {
     	switch(m_state) {
     	case C.intake_stop:
     		Robot.claw.stopSuck();
+    		Robot.claw.setDeathGrip(true);
     		break;
     	case C.intake_suck:
+    		Robot.claw.setDeathGrip(false);
     		Robot.claw.suckIn();
+    		
     		break;
     		
     	case C.intake_spit:
+    		Robot.claw.setDeathGrip(false);
     		Robot.claw.spitOut();
     		break;
     	}
