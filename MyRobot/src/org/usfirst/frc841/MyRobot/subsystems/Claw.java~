@@ -65,7 +65,7 @@ public class Claw extends Subsystem {
     //constructor
     public Claw() {
     ploop = new Claw.CLoop(this, this.x,this.y, (long) Math.abs(this.period*100));
-    ploop.SetOutputLimits(-0.5, 0.5);
+    ploop.SetOutputLimits(-1, 1);
     ploop.setTunings(C.c_p, C.c_i, C.c_d);
     this.zero = elbow.getSensorCollection().getPulseWidthPosition();
     this.zero = 2850- this.zero;
@@ -94,16 +94,16 @@ public class Claw extends Subsystem {
     // here. Call these from Commands.
     
     public void suckIn() {
-    	leftSuck.set(-0.5);
-    	rightSuck.set(-0.5);
+    	leftSuck.set(C.WheelInTakeSpeed_IntakeSpeed);
+    	rightSuck.set (C.WheelInTakeSpeed_IntakeSpeed);
     }
     public void stopSuck() {
-    	leftSuck.set(0);
-    	rightSuck.set(0);
+    	leftSuck.set(C.WheelInTakeSpeed_StopSpeed);
+    	rightSuck.set(C.WheelInTakeSpeed_StopSpeed);
     }
    public void spitOut() {
-   		leftSuck.set(1);
-   		rightSuck.set(1);
+   		leftSuck.set(C.WheelInTakeSpeed_SpitSpeed);
+   		rightSuck.set(C.WheelInTakeSpeed_SpitSpeed);
    }
    public void openClaw() {
 	   clawActuator.set(DoubleSolenoid.Value.kReverse);

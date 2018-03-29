@@ -25,6 +25,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.PIDSourceType;
 
@@ -72,6 +73,8 @@ public class DriveTrain extends Subsystem {
     
    // private boolean 
     
+    public boolean enablepickup = false;
+    
     private Logger log;
     
     public DriveTrain(){
@@ -89,6 +92,12 @@ public class DriveTrain extends Subsystem {
 		rightDrive1.configPeakCurrentLimit(C.currentPeak, C.currenttimeout);
 		rightDrive2.configPeakCurrentLimit(C.currentPeak, C.currenttimeout);
 		rightDrive3.configPeakCurrentLimit(C.currentPeak, C.currenttimeout);
+		leftDrive1.configPeakCurrentDuration(C.currentPeakTime, C.currenttimeout);
+	    leftDrive2.configPeakCurrentDuration(C.currentPeakTime, C.currenttimeout);
+	    leftDrive3.configPeakCurrentDuration(C.currentPeakTime, C.currenttimeout);
+		rightDrive1.configPeakCurrentDuration(C.currentPeakTime, C.currenttimeout);
+		rightDrive2.configPeakCurrentDuration(C.currentPeakTime, C.currenttimeout);
+		rightDrive3.configPeakCurrentDuration(C.currentPeakTime, C.currenttimeout);
 		leftDrive1.enableCurrentLimit(true);
 		leftDrive2.enableCurrentLimit(true);
 	    leftDrive3.enableCurrentLimit(true);
@@ -418,6 +427,11 @@ public static double limit(double v, double limit) {
     SmartDashboard.putNumber("LQuad", this.getLeftEncoderDistance() );
     SmartDashboard.putNumber("LSpeed", this.getLeftSpeed());
     SmartDashboard.putNumber("RSpeed", this.getRightSpeed());
+    SmartDashboard.putNumber("Accumulator", quickStopAccumulator);
+    int test;
+    test = this.getClosestSwitch();
+    SmartDashboard.putNumber("switch", test);
+   // SmartDashboard.putNumber("RPower",this.rightPwm); Sam dreams of this information
     
     //SmartDashboard.putString("DB/String 1","Rdist: " + Math.floor(this.getRightEncoderDistance() *100)/100.0);
     //SmartDashboard.putString("DB/String 2","Lpower: " + Robot.driveTrain.getCount());
@@ -427,6 +441,21 @@ public static double limit(double v, double limit) {
     public boolean autoSelect() {
     	return autoSelector.get();
     }
+    public int getClosestSwitch() {
+    	String data;
+    data = DriverStation.getInstance().getGameSpecificMessage();
     
+    if(data.charAt(0)=='L') {
+    	return 1;
+    }
+    if(data.charAt(0)=='R') {
+    	return 2;
+    }
+    else {
+    	return 0;
+
+    }
+  
+    }
 }
 

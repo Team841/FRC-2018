@@ -44,6 +44,7 @@ public class RobotMap {
     public static DigitalInput driveTrainAutoSelector;
     public static WPI_VictorSPX elevatorLift1;
     public static WPI_VictorSPX elevatorLift2;
+    public static DoubleSolenoid clawDeathGrip;
     public static WPI_TalonSRX clawElbow;
     public static DoubleSolenoid clawClawActuator;
     public static DigitalInput clawGrabSensor;
@@ -89,6 +90,9 @@ public class RobotMap {
         
         elevatorLift2 = new WPI_VictorSPX(7);
         
+        
+        clawDeathGrip = new DoubleSolenoid(0, 0, 1);
+        LiveWindow.addActuator("Claw", "DeathGrip", clawDeathGrip);
         
         clawElbow = new WPI_TalonSRX(8);
         

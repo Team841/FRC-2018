@@ -95,6 +95,7 @@ public class OI {
 
 
         // SmartDashboard Buttons
+        SmartDashboard.putData("TurnToDistance", new TurnToDistance());
         SmartDashboard.putData("AutoSelect", new AutoSelect());
         SmartDashboard.putData("AutoSwitchScore", new AutoSwitchScore());
         SmartDashboard.putData("PutClawInPixelIntakePosition", new PutClawInPixelIntakePosition());
