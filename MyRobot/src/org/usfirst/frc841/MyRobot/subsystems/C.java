@@ -65,7 +65,7 @@ public class C {
     
     
     
-    public static final double claw_dwn = 3000;
+    public static final double claw_dwn = 2800;
     public static final double claw_mid = 5500;
     public static final double claw_up = 6055;
     
