@@ -239,7 +239,7 @@ Children:
           default: '0'
           name: Input Channel (Digital)
           validators: *id010
-          value: '25'
+          value: '9'
       Base: Digital Input
       Name: HallEffect
     - Children: []

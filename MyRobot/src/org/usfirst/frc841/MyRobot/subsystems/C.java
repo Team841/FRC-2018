@@ -46,7 +46,7 @@ public class C {
     
     
     //Claw PID Loop (up)
-    public static final double c_p = 0.00115;
+    public static final double c_p = 0.001;
     public static final double c_i = 0.0000;
     public static final double c_d = 0.00000;
     public static final double c_offset = 0;

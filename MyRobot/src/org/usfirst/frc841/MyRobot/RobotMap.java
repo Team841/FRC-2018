@@ -98,7 +98,7 @@ public class RobotMap {
         elevatorLift2 = new WPI_VictorSPX(7);
         
         
-        clawHallEffect = new DigitalInput(25);
+        clawHallEffect = new DigitalInput(9);
         LiveWindow.addSensor("Claw", "HallEffect", clawHallEffect);
         
         clawDeathGrip = new DoubleSolenoid(0, 0, 1);
