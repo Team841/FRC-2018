@@ -83,6 +83,7 @@ public class RobotMap {
         driveTrainRightDrive3 = new WPI_TalonSRX(3);
         
         
+        
         driveTrainAutoSelector = new DigitalInput(6);
         LiveWindow.addSensor("DriveTrain", "AutoSelector", driveTrainAutoSelector);
         
