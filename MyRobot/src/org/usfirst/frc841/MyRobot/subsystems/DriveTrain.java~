@@ -450,10 +450,10 @@ public static double limit(double v, double limit) {
     		return 0;	//DRIVE STRAIGHT - THE ROBOT DOES NOT TRY TO SCORE, ONLY MOVE A BIT
     	}
     	else if((autoSelector2.get() == false) && (autoSelector.get() == true)) {
-    		return 1;	//
+    		return 1;	//LEFT?
     	}
     	else if((autoSelector2.get() == true) && (autoSelector.get() == false)) {
-    		return 2;
+    		return 2;	//RIGHT?
     	}
         	
     	else if((autoSelector2.get() == true) && (autoSelector.get() == true)) {

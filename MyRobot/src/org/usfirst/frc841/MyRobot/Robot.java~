@@ -130,21 +130,25 @@ public class Robot extends TimedRobot {
        		}
        	}
        	//DRIVE STRAIGTH AND SCORE ONLY IF WE ARE IN THE CORRECT ONE
-       	/* TODO
+       	//ONLY IN THE CASE THAT 1 IS LEFT AND 2 IS RIGHT
        	else
-       		if(data.charAt(0)=='L') && () {
-       			chooser.addDefault("MiddleLeftAuto", new MiddleLeftAuto());
+       	{
+       		//WE ARE ON THE LEFT AND THE GOAL IS ON THE LEFT
+       		if((data.charAt(0)=='L') && (Robot.driveTrain.getAutoSelect()== 1)) {
+       			//GO FORWARD AND DROP IT, this is because the parameter is true
+       			chooser.addDefault("AutoForwardDropOrKeep", new AutoForwardDropOrKeep(true));
        		}
-       		else if(data.charAt(0)=='R') {
-       			chooser.addDefault("MiddleRightAuto", new MiddleRightAuto());
+       		//WE ARE ON THE RIGHT AND THE GOAL IS ON THE RIGHT
+       		else if((data.charAt(0)=='R') && (Robot.driveTrain.getAutoSelect()== 2)){
+       			//GO FORWARD AND DROP IT
+       			chooser.addDefault("AutoForwardDropOrKeep", new AutoForwardDropOrKeep(true));
        		}
+       		//WE ARE IN FRONT OF THE WRONG GOAL, THAT MEANS THAT WE NEED ONLY TO GO FORWARD
        		else {
-       			chooser.addDefault("AutoTimeDrive", new AutoTimeDrive());
-       			//autonomousCommand = new AutoTimeDrive();
+       			chooser.addDefault("AutoForwardDropOrKeep", new AutoForwardDropOrKeep(false));
 	
        		}
        	}
-       	*/
        	
 
     	

@@ -75,9 +75,9 @@ public class OI {
         coPilot = new Joystick(1);
         
         moveClawUp = new JoystickButton(coPilot, 10);
-        moveClawUp.whenPressed(new MoveClawUpManually());
+        moveClawUp.whileHeld(new MoveClawUpManually());
         moveClawDown = new JoystickButton(coPilot, 9);
-        moveClawDown.whenPressed(new MoveClawDownManually());
+        moveClawDown.whileHeld(new MoveClawDownManually());
         putIntakeInPostion = new JoystickButton(coPilot, 2);
         putIntakeInPostion.whenPressed(new PutClawInPixelIntakePosition());
         downClaw = new JoystickButton(coPilot, 1);
