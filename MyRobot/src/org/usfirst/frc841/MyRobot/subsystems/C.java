@@ -46,16 +46,16 @@ public class C {
     
     
     //Claw PID Loop (up)
-    public static final double c_p = 0.001;
+    public static final double c_p = 0.00070;
     public static final double c_i = 0.0000;
-    public static final double c_d = 0.00000;
+    public static final double c_d = 0.00010;
     public static final double c_offset = 0;
     
     
     //Claw PID Loop (down)
-    public static final double cl_p = 0.00100;
+    public static final double cl_p = 0.00030;
     public static final double cl_i = 0.0000;
-    public static final double cl_d = 0.00000;
+    public static final double cl_d = 0.00020;
     
     //Claw wheel motor speeds
     public static final double WheelInTakeSpeed_IntakeSpeed = -1; //must be from 0 to -1
@@ -66,8 +66,8 @@ public class C {
     
     
     public static final double claw_dwn = 2800;
-    public static final double claw_mid = 5500;
-    public static final double claw_up = 6055;
+    public static final double claw_mid = 4000;
+    public static final double claw_up = 4660;
     
     public static final int intake_stop = 0;
     public static final int intake_suck = 1;

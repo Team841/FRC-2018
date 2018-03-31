@@ -59,7 +59,7 @@ public class Claw extends Subsystem {
     public boolean lastgrabsensor = true;
     public boolean lastcubesensor= true;
     private boolean enableautograb = false;
-    private double offset = 0;
+    public double offset = 0;
     
     public Claw.CLoop ploop;
     

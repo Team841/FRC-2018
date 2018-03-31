@@ -96,6 +96,11 @@ public class Robot extends TimedRobot {
     	
        	String data = "XXX"; //Our empty 
         
+       	/*
+       	 * TO CHECK THE DATA PROVIDED BY THE FIELD
+       	 * SCORE ON LEFT OR IN RIGHT.
+       	 */
+       	
        	try
        	{
        		data = DriverStation.getInstance().getGameSpecificMessage();

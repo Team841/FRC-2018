@@ -59,6 +59,7 @@ public class Claw extends Subsystem {
     public boolean lastgrabsensor = true;
     public boolean lastcubesensor= true;
     private boolean enableautograb = false;
+    public double offset = 0;
     
     public Claw.CLoop ploop;
     
@@ -152,7 +153,7 @@ public class Claw extends Subsystem {
    
    
    public double getAngle() {
-	  return (double) (elbow.getSensorCollection().getPulseWidthPosition()-C.c_offset+this.zero);
+	  return (double) (elbow.getSensorCollection().getPulseWidthPosition()+this.offset+this.zero);
    }
    public void setElbowPower(double power) {
 	   elbow.set(-power);
@@ -160,7 +161,9 @@ public class Claw extends Subsystem {
    
    
    public void zeroElbow() {
-	   
+	   if (hallEffect.get() == false ) {
+	//	   this.offset = 3700 - elbow.getSensorCollection().getPulseWidthPosition() -this.zero;
+	   }
 	   
 	   SensorCollection lim =   elbow.getSensorCollection();
 	   SmartDashboard.putNumber("Abs Angle", this.getAngle());
