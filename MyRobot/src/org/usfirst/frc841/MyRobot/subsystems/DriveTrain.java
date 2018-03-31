@@ -440,19 +440,24 @@ public static double limit(double v, double limit) {
   
    
     }
+    
+    /*
+     * THIS METHOD OBTAINS THE VALUES OF THE SWITCHES TO CONTROL THE POSITION OF THE ROBOT
+     * AT THE BEGINNING OF THE MACH
+     */
     public int getAutoSelect() {
     	if ((autoSelector2.get() == false) && (autoSelector.get() == false)) {
-    		return 0;
+    		return 0;	//DRIVE STRAIGHT - THE ROBOT DOES NOT TRY TO SCORE, ONLY MOVE A BIT
     	}
     	else if((autoSelector2.get() == false) && (autoSelector.get() == true)) {
-    		return 1;
+    		return 1;	//
     	}
     	else if((autoSelector2.get() == true) && (autoSelector.get() == false)) {
     		return 2;
     	}
         	
     	else if((autoSelector2.get() == true) && (autoSelector.get() == true)) {
-        		return 3;
+        		return 3;	//DRIVE STRAIGHT AND SCORE (MUST BE ON THE MIDDLE)
         	}
     	else {
     		return 0;

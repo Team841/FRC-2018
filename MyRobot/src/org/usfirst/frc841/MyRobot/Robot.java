@@ -111,18 +111,31 @@ public class Robot extends TimedRobot {
        		data = "XXX";
        	}
        	
+       	//DRIVE STRAIGHT AND DO NOT TRY TO SCORE, WE DO NOT NEED TO CHECK THE INPUT OF THE FIELD
        	if(Robot.driveTrain.getAutoSelect()== 0) {
        		chooser.addDefault("AutoTimeDrive", new AutoTimeDrive());
-       		//autonomousCommand = new AutoTimeDrive();
        	}
+       	//DRIVE STRAIGTH AND SCORE IN THE MIDDLE, WE DO NEED TO CHECK THE INPUT TO ROTATE TO LEFT OR RIGHT
        	else if(Robot.driveTrain.getAutoSelect()== 3) {
        		if(data.charAt(0)=='L') {
        			chooser.addDefault("MiddleLeftAuto", new MiddleLeftAuto());
-       		//autonomousCommand = new MiddleLeftAuto();
        		}
        		else if(data.charAt(0)=='R') {
        			chooser.addDefault("MiddleRightAuto", new MiddleRightAuto());
-       			//autonomousCommand = new MiddleRightAuto();
+       		}
+       		else {
+       			chooser.addDefault("AutoTimeDrive", new AutoTimeDrive());
+       			//autonomousCommand = new AutoTimeDrive();
+	
+       		}
+       	}
+       	//DRIVE STRAIGTH AND SCORE ONLY IF WE ARE IN THE CORRECT ONE
+       	else
+       		if(data.charAt(0)=='L') && () {
+       			chooser.addDefault("MiddleLeftAuto", new MiddleLeftAuto());
+       		}
+       		else if(data.charAt(0)=='R') {
+       			chooser.addDefault("MiddleRightAuto", new MiddleRightAuto());
        		}
        		else {
        			chooser.addDefault("AutoTimeDrive", new AutoTimeDrive());
